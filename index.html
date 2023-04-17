@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delete All Tweets</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Delete All Tweets</title>
 </head>
 <body>
-  <h1>Delete All Tweets</h1>
-  <button id="delete-tweets-btn">Delete Tweets</button>
+    <div class="container">
+        <h1>Delete All Tweets</h1>
+        <button id="login-btn">Login with Twitter</button>
+        <button id="delete-tweets-btn" hidden>Delete Tweets</button>
+    </div>
 
-  <script>
-    document.getElementById("delete-tweets-btn").addEventListener("click", () => {
-      window.open("https://twitter.com/your_username_here", "_blank");
-      setTimeout(() => {
-        deleteTweets();
-      }, 5000);
-    });
+    <script>
+        document.getElementById("login-btn").addEventListener("click", () => {
+            // Implement Twitter login functionality here.
+            // After successful login, show the "Delete Tweets" button.
+            document.getElementById("login-btn").hidden = true;
+            document.getElementById("delete-tweets-btn").hidden = false;
+        });
 
-    function deleteTweets() {
-      // Paste the deleteTweets() function from the previous answer here
-    }
-  </script>
+        document.getElementById("delete-tweets-btn").addEventListener("click", () => {
+            if (confirm("本当にツイートを削除しても良いですか?")) {
+                deleteTweets();
+            }
+        });
+
+        function deleteTweets() {
+            // Paste the deleteTweets() function from the previous answer here
+        }
+    </script>
 </body>
 </html>
