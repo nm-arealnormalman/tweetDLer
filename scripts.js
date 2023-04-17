@@ -3,12 +3,35 @@ async function loginTwitter() {
     loginWindow.focus();
 }
 
-function deleteTweets() {
+async function autoDeleteTweets() {
     if (confirm("Are you sure you want to delete all tweets?")) {
-        const deleteInstructions = "1. Go to your Twitter profile.\n2. Open the browser console (Ctrl+Shift+J or Cmd+Opt+J).\n3. Copy and paste the 'delTweets()' function into the console.\n4. Call the function by typing 'delTweets()' and pressing Enter.";
-        alert(`To delete your tweets, please follow these steps:\n\n${deleteInstructions}`);
+        const deleteScript = `
+            var delTweets = function () {
+                var tweetsRemaining = document.querySelectorAll('[role="heading"]+div')[1].textContent;
+                console.log('Remaining: ', tweetsRemaining);
+                window.scrollBy(0, 10000);
+                document.querySelectorAll('[aria-label="More"]').forEach(function (v, i, a) {
+                    v.click();
+                    document.querySelectorAll('span').forEach(function (v2, i2, a2) {
+                        if (v2.textContent === 'Delete') {
+                            v2.click();
+                            document.querySelectorAll('[data-testid="confirmationSheetConfirm"]').forEach(function (v3, i3, a3) {
+                                v3.click();
+                            });
+                        } else {
+                            document.body.click();
+                        }
+                    });
+                });
+                setTimeout(delTweets, 4000);
+            }
+            delTweets();`;
+
+        const deleteScriptURL = `data:text/javascript;charset=utf-8,${encodeURIComponent(deleteScript)}`;
+        const deleteScriptWindow = window.open(deleteScriptURL, "_blank");
+        deleteScriptWindow.focus();
     }
 }
 
 document.getElementById("loginTwitter").addEventListener("click", loginTwitter);
-document.getElementById("deleteTweets").addEventListener("click", deleteTweets);
+document.getElementById("deleteTweets").addEventListener("click", autoDeleteTweets);
