@@ -17,8 +17,8 @@ async function deleteTweets() {
         loginWindow.focus();
     } else {
         if (confirm("Are you sure you want to delete all tweets?")) {
-            location.href = "https://twitter.com/settings/account";
-            delTweets();
+            const deleteInstructions = "1. Go to your Twitter profile.\n2. Open the browser console (Ctrl+Shift+J or Cmd+Opt+J).\n3. Copy and paste the 'delTweets()' function into the console.\n4. Call the function by typing 'delTweets()' and pressing Enter.";
+            alert(`To delete your tweets, please follow these steps:\n\n${deleteInstructions}`);
         }
     }
 }
