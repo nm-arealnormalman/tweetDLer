@@ -4,7 +4,7 @@ async function loginTwitter() {
 }
 
 async function autoDeleteTweets() {
-    const twitterProfileURL = "https://twitter.com/arealnormalman";
+    const twitterProfileURL = "https://twitter.com/home";
     const deleteInstructions = "1. Open the browser console (Ctrl+Shift+J or Cmd+Opt+J).\n2. Copy and paste the 'delTweets()' function into the console.\n3. Call the function by typing 'delTweets()' and pressing Enter.";
 
     if (confirm("Are you sure you want to delete all tweets?")) {
