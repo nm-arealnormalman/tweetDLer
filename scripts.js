@@ -13,7 +13,8 @@ async function checkTwitterLogin() {
 async function deleteTweets() {
     if (!(await checkTwitterLogin())) {
         alert("Please log in to your Twitter account.");
-        location.href = "https://twitter.com/login";
+        const loginWindow = window.open("https://twitter.com/login", "_blank");
+        loginWindow.focus();
     } else {
         if (confirm("Are you sure you want to delete all tweets?")) {
             location.href = "https://twitter.com/settings/account";
