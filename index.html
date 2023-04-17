@@ -9,20 +9,14 @@
 <body>
     <div class="container">
         <h1>Delete All Tweets</h1>
-        <button id="login-btn">Login with Twitter</button>
-        <button id="delete-tweets-btn" hidden>Delete Tweets</button>
+        <p>Please log in to your Twitter account before proceeding.</p>
+        <a href="https://twitter.com/login" target="_blank" class="twitter-login">Log in to Twitter</a>
+        <button id="delete-tweets-btn" class="delete-tweets">Delete Tweets</button>
     </div>
 
     <script>
-        document.getElementById("login-btn").addEventListener("click", () => {
-            // Implement Twitter login functionality here.
-            // After successful login, show the "Delete Tweets" button.
-            document.getElementById("login-btn").hidden = true;
-            document.getElementById("delete-tweets-btn").hidden = false;
-        });
-
         document.getElementById("delete-tweets-btn").addEventListener("click", () => {
-            if (confirm("本当にツイートを削除しても良いですか?")) {
+            if (confirm("Are you sure you want to delete all your tweets?")) {
                 deleteTweets();
             }
         });
