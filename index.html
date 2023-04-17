@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete All Tweets</title>
+</head>
+<body>
+  <h1>Delete All Tweets</h1>
+  <button id="delete-tweets-btn">Delete Tweets</button>
+
+  <script>
+    document.getElementById("delete-tweets-btn").addEventListener("click", () => {
+      window.open("https://twitter.com/your_username_here", "_blank");
+      setTimeout(() => {
+        deleteTweets();
+      }, 5000);
+    });
+
+    function deleteTweets() {
+      // Paste the deleteTweets() function from the previous answer here
+    }
+  </script>
+</body>
+</html>
