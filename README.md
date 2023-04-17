@@ -14,11 +14,11 @@
 3. https://nm-arealnormalman.github.io/tweetDLer/ をブラウザで開きます。
 4. "Delete All Tweets"ボタンをクリックします。
 
-![Step1](./screenshots/step1.png)
+![Step1](./step1.png)
 
 5. ログインしていない場合は、Twitterにログインします。
 
-![Step2](./screenshots/step2.png)
+![Step2](./step2.png)
 
 6. 最終確認メッセージが表示されます。"はい"をクリックしてツイートを削除します。
 
